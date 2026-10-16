@@ -1,6 +1,6 @@
 cask "pux-bar" do
-  version "0.1.5"
-  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  version "0.1.6"
+  sha256 "56d3bf660d1e6dbc1fcdb3f6f438d2bd6043b2064522ebbfaa6ea92155ee75e6"
 
   url "https://github.com/Blackrose-blackhat/pux/releases/download/v#{version}/Pux-#{version}.zip"
   name "Pux"
