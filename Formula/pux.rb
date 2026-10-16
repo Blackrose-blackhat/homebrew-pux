@@ -9,9 +9,9 @@ class Pux < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    # node@22 is keg-only, so wrap the installed scripts with its bin on PATH
-    # instead of symlinking them; the npm shebang is `#!/usr/bin/env node`.
-    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_bin("node@22")}:${PATH}"
+    # node@22 is keg-only and the npm shebang is `#!/usr/bin/env node`, so
+    # install a wrapper that puts node@22 on PATH instead of a bare symlink.
+    (bin/"pux").write_env_script libexec/"bin/pux", PATH: "#{formula_opt_bin("node@22")}:${PATH}"
   end
 
   test do
