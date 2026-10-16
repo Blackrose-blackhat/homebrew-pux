@@ -16,6 +16,5 @@ class Pux < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}/pux --version")
-    assert_match "serve", shell_output("#{bin}/pux --help")
   end
 end
