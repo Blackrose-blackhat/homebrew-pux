@@ -11,7 +11,7 @@ class Pux < Formula
     system "npm", "install", *std_npm_args
     # node@22 is keg-only, so wrap the installed scripts with its bin on PATH
     # instead of symlinking them; the npm shebang is `#!/usr/bin/env node`.
-    bin.env_script_all_files libexec/"bin", PATH: "#{Formula["node@22"].opt_bin}:${PATH}"
+    bin.env_script_all_files libexec/"bin", PATH: "#{formula_opt_bin("node@22")}:${PATH}"
   end
 
   test do

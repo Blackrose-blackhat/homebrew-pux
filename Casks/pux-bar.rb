@@ -8,13 +8,11 @@ cask "pux-bar" do
   homepage "https://github.com/Blackrose-blackhat/pux"
 
   depends_on formula: "Blackrose-blackhat/pux/pux"
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Pux.app"
 
-  zap trash: [
-    "~/Library/Preferences/sh.pux.bar.plist",
-  ]
+  zap trash: "~/Library/Preferences/sh.pux.bar.plist"
 
   caveats <<~EOS
     Pux.app is ad-hoc signed, not notarized, so macOS blocks the first launch.
